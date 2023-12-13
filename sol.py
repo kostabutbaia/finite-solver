@@ -19,9 +19,11 @@ def get_sol(A_0: float, Av_0: float, h: float, max_r: float):
     return r_range, A
 
 def main():
+    # equation: A'' - lambda*A+A^3=0
+    # potential U(r) = lambda*A^2 - 1/2*A^4
     A_start = np.sqrt(2*LAMBDA)
     print(A_start)
-    r_range, A = get_sol(A_start, 0, 0.1, 20)
+    r_range, A = get_sol(A_start, 0, 0.0001, 20)
 
     # plot minimums
     plt.plot(r_range, [np.sqrt(LAMBDA)]*len(r_range), 'r--')
